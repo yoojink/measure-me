@@ -12,7 +12,7 @@ public class Square {
 
 	public Point lowerLeft;
 
-	public double getDistance() {
+	public double getDistanceTo(Square square) {
 		return -1;
 	}
 }

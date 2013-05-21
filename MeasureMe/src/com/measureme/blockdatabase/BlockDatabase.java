@@ -15,6 +15,10 @@ import java.util.List;
 // height: 1,12,22,32,42
 // waist: 22,23,24,25,26,27
 public class BlockDatabase {
+	
+	public BlockDatabase() {
+		
+	}
 
 	public int getRightOf(int index) {
 		return -1;
@@ -33,13 +37,7 @@ public class BlockDatabase {
 	}
 
 	// this returns the list of blocks that will make up the 'height'
-	public BlockList getHeightBlockList() {
-		return null;
-	}
-	
-	// this returns the list of blocks that make up each circumference
-	// for example, one circumference would be 'waist' or 'upper left arm'
-	public List<BlockList> getCircumferenceBlockLists() {
+	public List<BlockList> getBlocklists() {
 		return null;
 	}
 	
@@ -50,6 +48,14 @@ public class BlockDatabase {
 		
 		public BlockList(String blockList) {
 			// parse the string and set in mDescription/mIndices
+		}
+		
+		public String getDescription() {
+			return mDescription;
+		}
+		
+		public List<Integer> getIndices() {
+			return mIndices;
 		}
 	}
 
