@@ -7,11 +7,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.measureme.blockdatabase.BlockDatabase;
+import com.measureme.suitinfo.SuitInfo;
 
 public class Main {
 	
-	private BlockDatabase mBlockDatabase;
+	private SuitInfo mSuitInfo;
 	private Map<BlockPair, List<Measurement>> mMeasurements;
 
 	/**
@@ -27,7 +27,7 @@ public class Main {
 	}
 	
 	public Main() {
-		mBlockDatabase = new BlockDatabase();
+		mSuitInfo = new SuitInfo();
 		mMeasurements = new HashMap<BlockPair, List<Measurement>>();
 	}
 	
@@ -37,8 +37,8 @@ public class Main {
 			addMeasurementsForImage(image);
 		}
 		
-		List<BlockDatabase.BlockList> blockLists = mBlockDatabase.getBlocklists();
-		for (BlockDatabase.BlockList blockList : blockLists) {
+		List<SuitInfo.BlockList> blockLists = mSuitInfo.getBlocklists();
+		for (SuitInfo.BlockList blockList : blockLists) {
 			double circ = getCircumference(blockList);
 			System.out.println(blockList.getDescription() + " has circumference " + circ);
 		}
@@ -57,14 +57,14 @@ public class Main {
 		// for each block, see if you can find a pair with the bottom / right block
 		// we don't need to do top/left since they will be some other block's bottom/right
 		for (Block block : blockMap.values()) {
-			int belowIndex = mBlockDatabase.getBelow(block.getIndex());
+			int belowIndex = mSuitInfo.getBelow(block.getIndex());
 			Block belowBlock = blockMap.get(new Integer(belowIndex));
 			if (belowBlock != null) {
 				// we have two blocks in the image that are next to each other
 				addBlockPairToMeasurements(block, belowBlock);
 			}
 
-			int rightIndex = mBlockDatabase.getRightOf(block.getIndex());
+			int rightIndex = mSuitInfo.getRightOf(block.getIndex());
 			Block rightBlock = blockMap.get(new Integer(rightIndex));
 			if (rightBlock != null) {
 				// we have two blocks in the image that are next to each other
@@ -104,7 +104,7 @@ public class Main {
 	}
 
 	// given the block list, and all the measurements, find each of the circumferences in the suit
-	public double getCircumference(BlockDatabase.BlockList blockList) {
+	public double getCircumference(SuitInfo.BlockList blockList) {
 		return 0;
 	}
 }

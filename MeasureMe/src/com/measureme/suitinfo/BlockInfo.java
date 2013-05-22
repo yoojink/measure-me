@@ -1,4 +1,4 @@
-package com.measureme.blockdatabase;
+package com.measureme.suitinfo;
 
 // we can serialize this from a string
 public class BlockInfo {

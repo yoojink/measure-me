@@ -1,4 +1,4 @@
-package com.measureme.blockdatabase;
+package com.measureme.suitinfo;
 
 import java.util.List;
 
@@ -14,9 +14,9 @@ import java.util.List;
 // same thing with the block lists
 // height: 1,12,22,32,42
 // waist: 22,23,24,25,26,27
-public class BlockDatabase {
+public class SuitInfo{
 	
-	public BlockDatabase() {
+	public SuitInfo() {
 		
 	}
 
