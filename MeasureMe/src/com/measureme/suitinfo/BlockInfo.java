@@ -2,7 +2,7 @@ package com.measureme.suitinfo;
 
 // we can serialize this from a string
 public class BlockInfo {
-	public BlockInfo(int index, int top, int bottom, int left, int right) {
+	public BlockInfo(int index, int top, int right, int bottom, int left) {
 		mIndex = index;
 		mTopBlockIndex = top;
 		mBottomBlockIndex = bottom;
@@ -29,4 +29,9 @@ public class BlockInfo {
 	private int mBottomBlockIndex;
 	private int mLeftBlockIndex;
 	private int mRightBlockIndex;
+	
+	@Override
+	public String toString() {
+		return String.format("BlockInfo - index %d,  top %d, right %d, bottom %d, left %d", mIndex, mTopBlockIndex, mRightBlockIndex, mBottomBlockIndex, mLeftBlockIndex);
+	}
 }

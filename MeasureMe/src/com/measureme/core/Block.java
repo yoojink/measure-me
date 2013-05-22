@@ -18,5 +18,10 @@ public class Block {
 	public int getIndex() {
 		return mIndex;
 	}
+	
+	@Override
+	public String toString() {
+		return String.format("Block(%d) with %s", mIndex, mSquare.toString());
+	}
 
 }

@@ -22,4 +22,9 @@ public class BlockPair {
 		BlockPair obp = (BlockPair) other;
 		return (mLowerIndex == obp.mLowerIndex) && (mUpperIndex == obp.mUpperIndex);
 	}
+	
+	@Override
+	public String toString() {
+		return String.format("BlockPair(%d, %d)", mLowerIndex, mUpperIndex);
+	}
 }
