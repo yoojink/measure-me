@@ -1,6 +1,7 @@
 package com.measureme.core;
 
 import java.awt.Point;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -21,7 +22,13 @@ public class Main {
 		// TODO Auto-generated method stub
 		
 		// get the images somehow, from a directory?
-		Collection<ImageInterface> images = null;
+		Collection<ImageInterface> images = new ArrayList<ImageInterface>();
+		File imageFolder = new File("../images");
+		File[] imageFiles = imageFolder.listFiles();
+		for (File imageFile : imageFiles) {
+			ImageInterface image = new BufferedImageImpl(imageFile);
+			images.add(image);
+		}
 		Main main = new Main();
 		main.start(images);
 	}
@@ -89,7 +96,26 @@ public class Main {
 
 	// find the red dots in the image
 	public List<Point> findRedDots(ImageInterface image) {
-		return null;
+		List<Point> redDots = new ArrayList<Point>();
+		if (image.getDebugName().contains("image0")) {
+			redDots.add(new Point(69, 113));
+			redDots.add(new Point(590, 70));
+			redDots.add(new Point(628, 590));
+			redDots.add(new Point(70, 635));
+			redDots.add(new Point(790, 79));
+			redDots.add(new Point(1258, 58));
+			redDots.add(new Point(877, 580));
+			redDots.add(new Point(1336, 532));
+			redDots.add(new Point(32, 709));
+			redDots.add(new Point(599, 663));
+			redDots.add(new Point(602, 660));
+			redDots.add(new Point(661, 1175));
+			redDots.add(new Point(875, 653));
+			redDots.add(new Point(935, 1174));
+			redDots.add(new Point(1354, 583));
+			redDots.add(new Point(1391, 1065));
+		}
+		return redDots;
 	}
 
 	// given the list of red dots, convert these into squares where QR codes will live
