@@ -188,12 +188,17 @@ public class Main {
 			List<Measurement> measurements = mMeasurements.get(pair);
 			if ((measurements != null) && (measurements.size() > 0)) {
 				// for now, just get the max measurement
-				double maxMeasurementPixels = 0;
+				double maxMeasurementInches = 0;
 				for (Measurement measurement : measurements) {
-					maxMeasurementPixels = Math.max(measurement.getDistancePixels(), maxMeasurementPixels);
+					maxMeasurementInches = Math.max(measurement.getDistanceInches(), maxMeasurementInches);
+					System.out.println("Found block pair " + pair + " with measurement " + measurement);
 				}
-				
+				circumferenceInches += maxMeasurementInches;
 			}
+			else {
+				System.out.println("Could'nt find block pair " + pair + " measurements = " + measurements);
+			}
+			first = second;
 		}
 		return circumferenceInches;
 	}

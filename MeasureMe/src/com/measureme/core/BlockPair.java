@@ -24,6 +24,11 @@ public class BlockPair {
 	}
 	
 	@Override
+	public int hashCode() {
+		return (mLowerIndex * 13) ^ mUpperIndex;
+	}
+	
+	@Override
 	public String toString() {
 		return String.format("BlockPair(%d, %d)", mLowerIndex, mUpperIndex);
 	}
