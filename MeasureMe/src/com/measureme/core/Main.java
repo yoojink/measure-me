@@ -137,42 +137,23 @@ public class Main {
 
 	// given the list of red dots, convert these into squares where QR codes will live
 	public List<Square> findSquares(List<Point> redDots, ImageInterface image) {
-		List<Square> squares = new ArrayList<Square>();
-		if (image.getDebugName().endsWith("image0.jpg")) {
-			squares.add(new Square("0", new Point(69, 113),
-					new Point(590, 70),
-					new Point(70, 635),
-					new Point(628, 590)));
-			squares.add(new Square("1", new Point(790, 79),
-					new Point(790, 79),
-					new Point(877, 580),
-					new Point(1336, 532)));
-			squares.add(new Square("2", new Point(32, 709),
-					new Point(599, 663),
-					new Point(138, 1213),
-					new Point(661, 1175)));
-			squares.add(new Square("3", new Point(875, 653),
-					new Point(935, 1174),
-					new Point(1354, 583),
-					new Point(1391, 1065)));
-		}
-		return squares;
+		return SquareFinder.findSquares(redDots, image);
 	}
 
 	// detect the qr code if possible and find that block's index
 	// return null if the qr code cannot be found
 	public Block decodeBlock(Square square, ImageInterface image) {
-		if (square.getDebugName() == "2") {
-			return new Block(square, 0);
+		if (square.getDebugName().equals("2")) {
+			return new Block(square, 3);
 		}
-		if (square.getDebugName() == "3") {
-			return new Block(square, 1);
-		}
-		if (square.getDebugName() == "0") {
+		if (square.getDebugName().equals("3")) {
 			return new Block(square, 2);
 		}
-		if (square.getDebugName() == "1") {
-			return new Block(square, 3);
+		if (square.getDebugName().equals("0")) {
+			return new Block(square, 1);
+		}
+		if (square.getDebugName().equals("1")) {
+			return new Block(square, 0);
 		}
 		return null;
 	}

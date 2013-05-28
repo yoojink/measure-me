@@ -51,4 +51,14 @@ public class BufferedImageImpl implements ImageInterface {
 		return (int)(0.2126 * getRed(i, j) + 0.7152 * getGreen(i, j) + 0.0722 * getBlue(i, j));
 	}
 
+	@Override
+	public int getWidth() {
+		return mBufferedImage.getWidth();
+	}
+
+	@Override
+	public int getHeight() {
+		return mBufferedImage.getHeight();
+	}
+
 }

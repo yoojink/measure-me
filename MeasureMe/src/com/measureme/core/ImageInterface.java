@@ -9,4 +9,6 @@ public interface ImageInterface {
 	public int getBlue(int i, int j);
 	public int getGreen(int i, int j);
 	public int getLuminance(int i, int j);
+	public int getWidth();
+	public int getHeight();
 }
