@@ -113,26 +113,7 @@ public class Main {
 
 	// find the red dots in the image
 	public List<Point> findRedDots(ImageInterface image) {
-		List<Point> redDots = new ArrayList<Point>();
-		if (image.getDebugName().endsWith("image0.jpg")) {
-			redDots.add(new Point(69, 113));
-			redDots.add(new Point(590, 70));
-			redDots.add(new Point(628, 590));
-			redDots.add(new Point(70, 635));
-			redDots.add(new Point(790, 79));
-			redDots.add(new Point(1258, 58));
-			redDots.add(new Point(877, 580));
-			redDots.add(new Point(1336, 532));
-			redDots.add(new Point(32, 709));
-			redDots.add(new Point(599, 663));
-			redDots.add(new Point(138, 1213));
-			redDots.add(new Point(661, 1175));
-			redDots.add(new Point(875, 653));
-			redDots.add(new Point(935, 1174));
-			redDots.add(new Point(1354, 583));
-			redDots.add(new Point(1391, 1065));
-		}
-		return redDots;
+		return RedDotFinder.findRedDots(image);
 	}
 
 	// given the list of red dots, convert these into squares where QR codes will live

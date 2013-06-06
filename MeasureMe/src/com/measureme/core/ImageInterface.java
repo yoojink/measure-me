@@ -1,5 +1,7 @@
 package com.measureme.core;
 
+import java.awt.Point;
+
 // since we don't know what type of image data we are using (android camera has bit arrays, opencv has their rep, regular java has BufferedInfo
 public interface ImageInterface {
 
@@ -11,4 +13,5 @@ public interface ImageInterface {
 	public int getLuminance(int i, int j);
 	public int getWidth();
 	public int getHeight();
+	public int getPixel(Point point);
 }

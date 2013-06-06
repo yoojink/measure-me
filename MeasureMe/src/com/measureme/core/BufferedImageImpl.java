@@ -3,6 +3,7 @@ package com.measureme.core;
 import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
+import java.awt.Point;
 import java.awt.image.BufferedImage;
 
 public class BufferedImageImpl implements ImageInterface {
@@ -59,6 +60,11 @@ public class BufferedImageImpl implements ImageInterface {
 	@Override
 	public int getHeight() {
 		return mBufferedImage.getHeight();
+	}
+
+	@Override
+	public int getPixel(Point point) {
+		return getPixel(point.x, point.y);
 	}
 
 }

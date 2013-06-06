@@ -48,10 +48,12 @@ public class SquareFinder {
 		points.addAll(redDots);
 		while (!points.isEmpty()) {
 			Point p = findClosestPoint(point, points);
-			if (pointsConnect(point, p, image)) {
-				return p;
+			if (p != null) {
+				if (pointsConnect(point, p, image)) {
+					return p;
+				}
+				points.remove(p);
 			}
-			points.remove(p);
 		}
 		return null;
 	}
@@ -114,7 +116,7 @@ public class SquareFinder {
 	private static Point findClosestPoint(Point point, List<Point> points) {
 		double minDistance = Double.MAX_VALUE;
 		int minPointIndex = -1;
-		for (int i = 1; i < points.size(); i++) {
+		for (int i = 0; i < points.size(); i++) {
 			double distance = point.distance(points.get(i));
 			if (distance < minDistance) {
 				minDistance = distance;

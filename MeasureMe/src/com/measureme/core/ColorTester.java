@@ -13,7 +13,7 @@ public class ColorTester {
 
 	public static boolean isRed(int pixel) {
 		Color color = new Color(pixel);
-		return (color.getRed() > (color.getBlue() * COLOR_CONST)) && (color.getRed() > (color.getGreen() * COLOR_CONST));
+		return (color.getRed() > (color.getBlue() * 1.7)) && (color.getRed() > (color.getGreen() * 1.7) && (color.getRed() > 100) && (Math.abs(color.getBlue() - color.getGreen()) < 10));
 	}
 
 	public static boolean isGreen(int pixel) {
