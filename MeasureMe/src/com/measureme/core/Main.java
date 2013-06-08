@@ -118,7 +118,8 @@ public class Main {
 
 	// given the list of red dots, convert these into squares where QR codes will live
 	public List<Square> findSquares(List<Point> redDots, ImageInterface image) {
-		return SquareFinder.findSquares(redDots, image);
+		//return SquareFinder.findSquares(redDots, image);
+		return QRSquareFinder.findSquares(image);
 	}
 
 	// detect the qr code if possible and find that block's index

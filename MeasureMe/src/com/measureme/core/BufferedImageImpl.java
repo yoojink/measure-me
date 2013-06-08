@@ -67,4 +67,9 @@ public class BufferedImageImpl implements ImageInterface {
 		return getPixel(point.x, point.y);
 	}
 
+	public void getRGB(int i, int j, int width, int height, int[] pixels,
+			int k, int width2) {
+		mBufferedImage.getRGB(i, j, width, height, pixels, k, width2);
+	}
+
 }

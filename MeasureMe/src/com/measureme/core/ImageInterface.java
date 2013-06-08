@@ -14,4 +14,6 @@ public interface ImageInterface {
 	public int getWidth();
 	public int getHeight();
 	public int getPixel(Point point);
+	public void getRGB(int i, int j, int width, int height, int[] pixels,
+			int k, int width2);
 }
