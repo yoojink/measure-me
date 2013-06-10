@@ -34,9 +34,9 @@ public class SquareFinder {
 				}
 			}
 			if (dots[3] != null) {
-				Square square = new Square(dots, String.valueOf(debugInt++));
-				squares.add(square);
-				System.out.println("Found square " + square);
+				//Square square = new Square(dots, String.valueOf(debugInt++));
+				//squares.add(square);
+				//System.out.println("Found square " + square);
 			}
 		}
 		return squares;

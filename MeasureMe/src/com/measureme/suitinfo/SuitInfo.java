@@ -35,6 +35,9 @@ public class SuitInfo{
 	}
 
 	public BlockInfo getBlockInfo(int index) {
+		if (mBlockInfos.size() <= index) {
+			return null;
+		}
 		return mBlockInfos.get(index);
 	}
 

@@ -72,4 +72,8 @@ public class BufferedImageImpl implements ImageInterface {
 		mBufferedImage.getRGB(i, j, width, height, pixels, k, width2);
 	}
 
+	public BufferedImage getImage() {
+		return mBufferedImage;
+	}
+
 }
